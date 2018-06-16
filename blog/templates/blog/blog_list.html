@@ -2,13 +2,17 @@
 
 {% block title %}博客列表{% endblock title %}
 
+{% block nav_blog_active %}active{% endblock nav_blog_active %}
+
 {% block blog-post %}
 <div class="panel panel-default">
   <div class="panel-heading"></div>
     <div class="panel-body">
       {% for blog in blogs %}
-      <h3>{{ blog.title }}</h3>
-      <p>{{ blog.body|striptags|truncatechars:120 }}</p>
+      <div class="blog">
+        <h3>{{ blog.title }}</h3>
+        <p class="blog-info">{{ blog.body|striptags|truncatechars:120 }}</p>
+      </div>
       {% endfor %}
     </div>
 </div>
