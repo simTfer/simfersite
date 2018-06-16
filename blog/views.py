@@ -10,6 +10,7 @@ class IndexView(TemplateView):
 class BlogListView(ListView):
     model = Post
     template_name = 'blog/blog_list.html'
+    context_object_name = 'blogs'
 
 
 class BlogDetailView(DetailView):
