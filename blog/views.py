@@ -38,6 +38,5 @@ class BlogListView(IndexView):
         return context
 
 
-
 class BlogDetailView(DetailView):
     template_name = 'blog/blog_detail.html'
