@@ -2,11 +2,7 @@ body {
     padding-top: 70px;
 }
 
-.blog-footer {
-    text-align: center;
-}
-
-div.blog:not(:last-child){
+div.blog {
     margin-bottom: 2em;
     padding-bottom: 1em;
     border-bottom: 1px solid #eee;
@@ -23,4 +19,8 @@ div.blog p.blog-info {
 ul.sidebar-module {
     list-style-type: none;
     padding: 0;
+}
+
+.center {
+    text-align: center;
 }
