@@ -24,3 +24,9 @@ ul.sidebar-module {
 .center {
     text-align: center;
 }
+
+#back-top {
+    position: fixed;
+    bottom: 30px;
+    right: 70px;
+}
