@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.db.models import Count
@@ -57,5 +58,16 @@ class CategoryView(BlogListView):
         self.category = get_object_or_404(Category, name=self.kwargs['category'])
         return Post.objects.filter(category=self.category)
 
-class BlogDetailView(DetailView):
+
+class BlogDetailView(IndexView):
+    queryset = Post.objects.all()
     template_name = 'blog/blog_detail.html'
+    context_object_name = 'blog'
+
+    def get_queryset(self):
+        return get_object_or_404(Post, pk=self.kwargs['pk'])
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context

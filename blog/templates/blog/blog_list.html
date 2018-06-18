@@ -4,13 +4,13 @@
 
 {% block nav_blog_active %}active{% endblock nav_blog_active %}
 
-{% block blog-post %}
+{% block blog-content %}
 <div class="panel panel-default">
   <div class="panel-heading"></div>
     <div class="panel-body">
       {% for blog in blogs %}
       <div class="blog">
-        <h3>{{ blog.title }}</h3>
+        <h3><a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a></h3>
         <p class="blog-info">{{ blog.body|striptags|truncatechars:120 }}</p>
       </div>
       {% endfor %}
@@ -51,5 +51,5 @@
       
   </ul>
 </nav>
-{% endblock blog-post %}
+{% endblock blog-content %}
   
