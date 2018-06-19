@@ -56,13 +56,15 @@
       </div>
       <!-- /.blog-main -->
 
-      <div class="hidden-xs col-md-3">
+      <div class="hidden-xs col-md-2 col-md-offset-1">
         <div class="panel panel-default">
           <div class="panel-heading">博客分类</div>
           <div class="panel-body">
             <ul class="sidebar-module">
               {% for category in categorys %}
-              <li><a href="{% url 'blog_category' category.name %}">{{ category.name }}({{ category.post_set.all.count }})</a></li>
+                {% if category.count != 0 %}
+                  <li><a href="{% url 'blog_category' category.name %}">{{ category.name }}({{ category.count }})</a></li>
+                {% endif %}
               {% endfor %}
             </ul>
           </div>
@@ -72,7 +74,7 @@
           <div class="panel-body">
             <ul class="sidebar-module">
               {% for date, blog_count in dates.items %}
-              <li><a href="#">{{ date|date:"Y年n月" }}({{ blog_count }})</a></li>
+              <li><a href="{% url 'blog_archive' date.year date.month %}">{{ date|date:"Y年n月" }}({{ blog_count }})</a></li>
               {% endfor %}
             </ul>
           </div>
@@ -82,7 +84,9 @@
           <div class="panel-body">
             <ul class="sidebar-module">
               {% for tag in tags %}
-              <li><a href="">{{ tag }}({{ tag.post_set.all.count }})</a></li>
+                {% if tag.count != 0 %}
+                <li><a href="{% url 'blog_tag' tag.name %}">{{ tag }}({{ tag.count }})</a></li>
+                {% endif %}
               {% endfor %}
             </ul>
           </div>
