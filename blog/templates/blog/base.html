@@ -39,68 +39,17 @@
           <li class="{% block nav_blog_active %}{% endblock nav_blog_active %}">
             <a href="{% url 'blog_list' %}">博客</a>
           </li>
+          <li class="{% block nav_about_active %}{% endblock nav_about_active %}">
+            <a href="{% url 'blog_about' %}">关于</a>
+          </li>
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </nav>
 
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-xs-12 col-md-9">
-
-        {% block blog-content %}{% endblock blog-content %}
-
-      </div>
-      <!-- /.blog-main -->
-
-      <div class="hidden-xs col-md-2 col-md-offset-1">
-        <div class="panel panel-default">
-          <div class="panel-heading">博客分类</div>
-          <div class="panel-body">
-            <ul class="sidebar-module">
-              {% for category in categorys %}
-                {% if category.count != 0 %}
-                  <li><a href="{% url 'blog_category' category.name %}">{{ category.name }}({{ category.count }})</a></li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">归档</div>
-          <div class="panel-body">
-            <ul class="sidebar-module">
-              {% for date, blog_count in dates.items %}
-              <li><a href="{% url 'blog_archive' date.year date.month %}">{{ date|date:"Y年n月" }}({{ blog_count }})</a></li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">标签</div>
-          <div class="panel-body">
-            <ul class="sidebar-module">
-              {% for tag in tags %}
-                {% if tag.count != 0 %}
-                <li><a href="{% url 'blog_tag' tag.name %}">{{ tag }}({{ tag.count }})</a></li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- /.blog-sidebar -->
-
-    </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
-
-
+  {% block content %}{% endblock content %}
+  
   <a href="#">
     <button id="back-top" type="button" class="btn btn-default" aria-label="Top">
       <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>

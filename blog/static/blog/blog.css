@@ -1,6 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     padding-top: 70px;
-}
+}    
 
 div.blog {
     margin-bottom: 2em;
@@ -18,7 +23,6 @@ div.blog p.blog-info {
 
 ul.sidebar-module {
     list-style-type: none;
-    padding: 0;
 }
 
 .center {
@@ -29,4 +33,14 @@ ul.sidebar-module {
     position: fixed;
     bottom: 30px;
     right: 70px;
+}
+
+ul.blog-info-description {
+    list-style-type: none;
+    margin-bottom: 1em;
+}
+
+ul.blog-info-description li{
+    display: inline-block;
+    margin-right: 1em;
 }

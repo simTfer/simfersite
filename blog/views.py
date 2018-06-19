@@ -1,9 +1,13 @@
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Count
 
 from .models import Post, Category, Tag
+
+
+class AboutView(TemplateView):
+    template_name = 'blog/about.html'
 
 
 class IndexView(ListView):
