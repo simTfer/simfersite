@@ -10,6 +10,10 @@ class AboutView(TemplateView):
     template_name = 'blog/about.html'
 
 
+class HomeView(TemplateView):
+    template_name = 'blog/home.html'
+
+
 class IndexView(ListView):
     template_name = 'blog/home.html'
 
