@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'comment',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,24 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+# 配置ckeditor
+CKEDITOR_UPLOAD_PATH = 'upload/'
+
+CKEDITOR_CONFIGS = {
+    'comment_ckeditor': {
+        'toolbar': 'custom',
+        'toolbar_custom': [
+            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'],
+            ['TextColor', 'BGColor', 'RemoveFormat'],
+            ['NumberedList', 'BulletedList'],
+            ['Link', 'Unlink'],
+            ['Smiley', 'SpecialChar', 'Blockquote'],
+        ],
+        'width': 'auto',
+        'height': 180,
+        'tabSpace': 4,
+        'removePlugins': 'elementspath',
+        'resize_enabled': False,
+    }
+}

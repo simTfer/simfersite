@@ -29,12 +29,6 @@ ul.sidebar-module {
     text-align: center;
 }
 
-#back-top {
-    position: fixed;
-    bottom: 30px;
-    right: 70px;
-}
-
 ul.blog-info-description {
     list-style-type: none;
     margin-bottom: 1em;
