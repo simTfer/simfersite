@@ -40,10 +40,10 @@ class Menu(models.Model):
 
 
 class Dish(models.Model):
-    dish = models.CharField('菜名', max_length=32)
+    name = models.CharField('菜名', max_length=32)
 
     def __str__(self):
-        return self.dish
+        return self.name
 
     class Meta:
         verbose_name_plural = '所有菜单'
@@ -52,7 +52,6 @@ class Dish(models.Model):
 class Favorite(models.Model):
     name = models.ForeignKey(Consumer, on_delete=models.CASCADE, verbose_name='用户名')
     dish = models.ManyToManyField(Dish)
-    # dish = models.ForeignKey(Dish, on_delete=models.CASCADE, verbose_name='菜名')
 
     def __str__(self):
         return '%s的收藏' % self.name

@@ -1,0 +1,16 @@
+{% extends 'diancan/dish_list.html' %}
+
+{% block diancan-content %}
+<div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+    {% for dish in dishes %}
+    <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="dish.pk">
+        {{ dish.name }}
+    </label>
+    {% endfor %}
+    </div>
+</div>
+{% endblock diancan-content %}
+    

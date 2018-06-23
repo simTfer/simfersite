@@ -9,84 +9,20 @@
   <div class="row">
     <div class="col-xs-12 col-md-9">
       {% block diancan-content %}
-        <div class="panel panel-default">
-          <div class="panel-heading"></div>
-            <div class="panel-body">
-              {% for dish in dishs %}
-              <div>
-                <h3><a href="#">{{ dish.name }}</a></h3>
-              </div>
-              {% endfor %}
-            </div>
-        <nav class="center" aria-label="Page navigation">
-          <ul class="pagination">
-
-            {% if page_obj.has_previous %}
-            <li>
-              <a href="?page={{ previous_page_number }}" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            {% endif %}
-              
-            {% for page_num in page_nums %}
-              {% if page_num == '...' %}
-              <li><span>...</span></li>
-              {% else %}
-                {% if page_num == page_obj.number %}
-                  <li class="active"><span>{{ page_num }}</span></li>
-                {% else %}
-                  <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-            
-            {% if page_obj.has_next %}
-            <li>
-              <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-            {% endif %}
-              
-          </ul>
-        </nav>
-        </div>
+        {% for dish in dishes %}
+        <button type="button" class="btn btn-default" style="margin-right:2em;">{{ dish.name }}</button>
+        {% endfor %}
       {% endblock diancan-content %}
     </div>
     <!-- /.diancan-main -->
 
     <div class="hidden-xs col-md-2 col-md-offset-1">
       <div class="panel panel-default">
-        <div class="panel-heading">分类</div>
         <div class="panel-body">
+          <h3 class="panel-heading">分类</h3>
           <ul class="sidebar-module">
-            {% for category in categorys %}
-              {% if category.count != 0 %}
-                <li><a href="{% url 'blog_category' category.name %}">{{ category.name }}({{ category.count }})</a></li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">日期</div>
-        <div class="panel-body">
-          <ul class="sidebar-module">
-            {% for date, blog_count in dates.items %}
-            <li><a href="{% url 'blog_archive' date.year date.month %}">{{ date|date:"Y年n月" }}({{ blog_count }})</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">标签</div>
-        <div class="panel-body">
-          <ul class="sidebar-module">
-            {% for tag in tags %}
-              {% if tag.count != 0 %}
-              <li><a href="{% url 'blog_tag' tag.name %}">{{ tag }}({{ tag.count }})</a></li>
-              {% endif %}
+            {% for dish in dishes %}
+              <li><a href="#">{{ dish.name }}</a></li>
             {% endfor %}
           </ul>
         </div>

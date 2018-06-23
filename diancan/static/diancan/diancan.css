@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 80px;
+}    
+
+h3.panel-heading {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #eee;
+}
