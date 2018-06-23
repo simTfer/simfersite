@@ -10,7 +10,7 @@
                 <h3>{{ blog.title }}</h3>
                 <ul class="blog-info-description">
                     <li>作者：{{ blog.author }}</li>
-                    <li>分类：<a href="{% url 'blog_category' blog.category %}">{{ blog.category }}</a></li>
+                    <li>分类：<a href="{% url 'blog:blog_category' blog.category %}">{{ blog.category }}</a></li>
                     <li>发表日期：{{ blog.created_time|date:"Y-m-d H:i:s" }}</li>
                 </ul>   
                 <p class="blog-info">{{ blog.body }}</p>

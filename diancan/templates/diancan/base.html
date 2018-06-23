@@ -15,7 +15,7 @@
   <link href="{% static 'bootstrap-3.3.7/css/bootstrap.min.css' %}" rel="stylesheet">
   
   {% block header %}
-  <link href="{% static 'blog/blog.css' %}" rel="stylesheet">
+  <link href="#" rel="stylesheet">
   {% endblock header %}
 </head>
 
@@ -31,18 +31,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{% url 'blog:blog_home' %}">simfer的博客</a>
+        <a class="navbar-brand" href="#">点餐系统</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="{% block nav_home_active %}{% endblock nav_home_active %}">
-            <a href="{% url 'blog:blog_home' %}">首页</a>
+            <a href="#">首页</a>
           </li>
           <li class="{% block nav_blog_active %}{% endblock nav_blog_active %}">
-            <a href="{% url 'blog:blog_list' %}">博客</a>
+            <a href="#">111</a>
           </li>
           <li class="{% block nav_about_active %}{% endblock nav_about_active %}">
-            <a href="{% url 'blog:blog_about' %}">关于</a>
+            <a href="#">222</a>
           </li>
         </ul>
       </div>
