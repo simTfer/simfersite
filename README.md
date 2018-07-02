@@ -5,3 +5,4 @@
 - Django==2.0.5
 - pytz==2018.4
 - wincertstore==0.2
+- django-ckeditor==5.5.0

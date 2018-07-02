@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 
 class Category(models.Model):
@@ -24,7 +25,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
     title = models.CharField('标题', max_length=64)
-    body = models.TextField('正文')
+    body = RichTextField()
     created_time = models.DateTimeField('创建时间')
     modified_time = models.DateField('修改时间')
     excerpt = models.CharField(max_length=200, blank=True)
